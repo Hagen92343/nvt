@@ -68,7 +68,7 @@ export function Header() {
             >
               {dark ? <Sun size={18} /> : <Moon size={18} />}
             </button>
-            <Link href="/kontakt" className="hidden md:inline-flex btn-secondary">
+            <Link href="/#kontaktformular" className="hidden md:inline-flex btn-secondary">
               Probe anfragen
             </Link>
             <button

@@ -71,7 +71,10 @@ export function ContactForm() {
   const current = steps[step];
 
   return (
-    <section className="relative py-section bg-cream-100 dark:bg-cocoa-900">
+    <section
+      id="kontaktformular"
+      className="relative py-section bg-cream-100 dark:bg-cocoa-900 scroll-mt-24 md:scroll-mt-28"
+    >
       <div className="container-page">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           <div className="lg:col-span-5">

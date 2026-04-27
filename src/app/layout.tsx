@@ -6,6 +6,7 @@ import { Header } from "@/components/chrome/Header";
 import { Footer } from "@/components/chrome/Footer";
 import { CustomCursor } from "@/components/chrome/CustomCursor";
 import { LoadingScreen } from "@/components/chrome/LoadingScreen";
+import { PageTransition } from "@/components/chrome/PageTransition";
 import { site } from "@/lib/site";
 
 const sans = Inter({
@@ -52,7 +53,9 @@ export default function RootLayout({
         <CustomCursor />
         <SmoothScroll>
           <Header />
-          <main className="relative">{children}</main>
+          <main id="top" className="relative">
+            <PageTransition>{children}</PageTransition>
+          </main>
           <Footer />
         </SmoothScroll>
       </body>

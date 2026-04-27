@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { footerLinks, site } from "@/lib/site";
+import { footerLinks, footerNav, site } from "@/lib/site";
 
 export function Footer() {
   return (
@@ -18,21 +18,34 @@ export function Footer() {
         <div className="md:col-span-3">
           <h4 className="eyebrow mb-5">Navigation</h4>
           <ul className="space-y-3 text-cocoa-800 dark:text-cream-100">
-            <li><Link href="/bourbon" className="hover:text-amber-500 transition-colors">Bourbon-Vanille</Link></li>
-            <li><Link href="/pompona" className="hover:text-amber-500 transition-colors">Pompona-Vanille</Link></li>
-            <li><Link href="/unsere-geschichte" className="hover:text-amber-500 transition-colors">Unsere Geschichte</Link></li>
-            <li><Link href="/kontakt" className="hover:text-amber-500 transition-colors">Kontakt</Link></li>
+            {footerNav.map((l) => (
+              <li key={l.href}>
+                <Link href={l.href} className="hover:text-amber-500 transition-colors">
+                  {l.label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
         <div className="md:col-span-3">
           <h4 className="eyebrow mb-5">Kontakt</h4>
           <ul className="space-y-3 text-cocoa-800 dark:text-cream-100">
+            <li>{site.contact.address.company}</li>
+            <li className="text-cocoa-700/70 dark:text-cream-200/70 leading-relaxed">
+              {site.contact.address.street}
+              <br />
+              {site.contact.address.city}
+            </li>
             <li>
               <a href={`mailto:${site.contact.email}`} className="hover:text-amber-500 transition-colors">
                 {site.contact.email}
               </a>
             </li>
-            <li>{site.contact.phone}</li>
+            <li>
+              <a href={`tel:+49${site.contact.phone.replace(/^0/, "")}`} className="hover:text-amber-500 transition-colors">
+                Tel: {site.contact.phone}
+              </a>
+            </li>
           </ul>
         </div>
       </div>
