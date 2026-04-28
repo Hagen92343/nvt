@@ -1,7 +1,7 @@
 # NVT — Sava Select Apple-Level Redesign
 
 > Zentrale Projekt-Doku. Pfad: `/Users/hagenmarggraf/Desktop/projects/nvt`
-> Angelegt: 2026-04-20 · Live seit 2026-04-20 · Letztes Update: 2026-04-27
+> Angelegt: 2026-04-20 · Live seit 2026-04-20 · Letztes Update: 2026-04-28
 
 ---
 
@@ -10,7 +10,7 @@
 | Zweck | URL |
 |---|---|
 | **Live (öffentlich, teilbar)** | **https://nvt-three.vercel.app** |
-| Letztes Production-Deployment | https://nvt-lvh2j51d5-hagen-marggrafs-projects.vercel.app |
+| Letztes Production-Deployment | https://nvt-ipiz9q782-hagen-marggrafs-projects.vercel.app |
 | Vercel Inspector | https://vercel.com/hagen-marggrafs-projects/nvt |
 | GitHub-Repo | https://github.com/Hagen92343/nvt |
 | Original-Vorlage | https://www.sava-select.de/ |
@@ -20,12 +20,13 @@
 
 ## 1. Projekt-Überblick
 
-Premium-Nachbau der Website des Vanille-Importeurs **Sava Select** (Kasel & Vogt GbR) auf Apple-Niveau.
+Premium-Nachbau der Website des Vanille-Importeurs **Sava Select** auf Apple-Niveau.
 Inhalte, Farbwelt und Features vom Original übernommen, UI/UX kompromisslos gehoben.
 
 - Zielgruppe: Präsentation an einen Freund
 - Ursprünglich lokal geplant — live zu Vercel deployt am 2026-04-20 auf Wunsch
 - 2026-04-27: Komplette Unterseiten-Suite ausgebaut (Bourbon, Pompona, Geschichte, Impressum, Datenschutz)
+- 2026-04-28: Update-Suite – Header-Polish, Pompona-Light-Mode, Zertifikate-Lightbox, Datenschutz/Impressum von „Kasel & Vogt GbR" auf „Sava Select" umgestellt
 
 ---
 
@@ -52,10 +53,10 @@ Inhalte, Farbwelt und Features vom Original übernommen, UI/UX kompromisslos geh
 | `/bourbon` | `src/app/bourbon/page.tsx` | 200 | `<ProductPage data={bourbon}>` – 5-Sektionen-Produktseite |
 | `/pompona` | `src/app/pompona/page.tsx` | 200 | `<ProductPage data={pompona}>` – identische Struktur, dunkler Hero |
 | `/unsere-geschichte` | `src/app/unsere-geschichte/page.tsx` | 200 | Long-Read ohne Zeitstrahl, „So entstand SAVA SELECT." als Closer |
-| `/impressum` | `src/app/impressum/page.tsx` | 200 | Echte Pflichtangaben Kasel & Vogt GbR + 4-teiliger Disclaimer |
-| `/datenschutz` | `src/app/datenschutz/page.tsx` | 200 | Volltext (a–k, a–i) + Sticky-Desktop-TOC + Mobile-Sheet + Back-to-Top |
-| `/zertifikate` | `src/app/zertifikate/page.tsx` | 200 | Bio + Direct Trade Tiles |
-| `/kontakt` | `src/app/kontakt/page.tsx` | 200 | Wrapper um `<ContactForm>` (Formular läuft primär auf der Startseite) |
+| `/impressum` | `src/app/impressum/page.tsx` | 200 | Pflichtangaben Sava Select („Vertreten durch: Niklas Vogt") + 4-teiliger Disclaimer |
+| `/datenschutz` | `src/app/datenschutz/page.tsx` | 200 | Volltext (a–k, a–i) auf Sava Select umgestellt + Sticky-Desktop-TOC + Mobile-Sheet + Back-to-Top |
+| `/zertifikate` | `src/app/zertifikate/page.tsx` | 200 | Lab-Zertifikate (Bourbon/Pompona) als Cards mit Framer-Motion-Lightbox |
+| `/kontakt` | `src/app/kontakt/page.tsx` | 200 | Wrapper um `<ContactForm>` — primärer Einstieg über Header-Menü „Kontakt" und Probe-Button |
 
 ---
 
@@ -74,11 +75,13 @@ src/
 │   │   ├── page.tsx              # Server-Komponente: Hero + PrivacyShell
 │   │   └── PrivacyShell.tsx      # Client: Sticky-TOC + IO-Highlight + Mobile-Sheet
 │   ├── kontakt/page.tsx
-│   └── zertifikate/page.tsx
+│   └── zertifikate/
+│       ├── page.tsx              # Server: PageHero + CertificateGallery
+│       └── CertificateGallery.tsx # Client: Cards + Framer-Motion-Lightbox (Esc/Klick-außerhalb)
 │
 ├── components/
 │   ├── chrome/                   # Layout-Elemente
-│   │   ├── Header.tsx            # Sticky Nav, Probe-CTA → /#kontaktformular
+│   │   ├── Header.tsx            # Sticky Nav, Probe-CTA → /kontakt; Force-Light-Mode auf /pompona
 │   │   ├── Footer.tsx            # 3-spaltig + echte Kontaktdaten + Legal
 │   │   ├── SmoothScroll.tsx      # Lenis Provider
 │   │   ├── CustomCursor.tsx      # Magnetic-Cursor
@@ -151,7 +154,8 @@ src/
 | `bourbon-product.png` | Quality-Sektion, Bourbon „Unsere Vanille" |
 | `pompona-product.png` | Pompona-Teaser, Pompona-Hero, Pompona „Unsere Vanille" |
 | `bourbon-1.png`–`bourbon-4.png` | Optionale Bourbon-Tiles, Pompona-Herkunft |
-| `cert-1.jpg`, `cert-2.jpg` | Zertifikate-Seite |
+| `zertifikate/zertifikat-1.png` | Lab-Zertifikat Bourbon (Vanillin 2,3 % · Feuchtigkeit 38 % · Februar 2026) |
+| `zertifikate/zertifikat-2.png` | Lab-Zertifikat Pompona (Vanillin 1,8 % · Feuchtigkeit 36 % · März 2026) |
 
 ---
 
@@ -240,6 +244,8 @@ npm run build     # Production-Build
   - `ae6ea2d` — Initial commit from Create Next App
   - `c921db6` — feat: Sava Select Apple-Level redesign
   - `60cc22a` — feat: Unterseiten – Bourbon, Pompona, Geschichte, Impressum, Datenschutz
+  - `7f3c7ec` — docs: NOTES.md auf Stand 2026-04-27
+  - `9cf0d72` — feat: Update-Suite – Header/Footer-Polish, Pompona-Header-Light-Mode, Zertifikate-Lightbox
 
 ---
 
@@ -257,6 +263,10 @@ npm run build     # Production-Build
 | 2026-04-27 | TOC mit IntersectionObserver statt Hash-Tracking | Robuster, weil scroll-Position-aware (Aktive Sektion folgt Sicht, nicht nur Klicks) |
 | 2026-04-27 | „Unsere Geschichte" ohne Zeitstrahl | Brief verlangt Long-Read; Apple Newsroom-Ästhetik passt besser als Timeline |
 | 2026-04-27 | GitHub-Push auf `Hagen92343/nvt` | Standard-Setup laut CLAUDE.md, nachgeholt |
+| 2026-04-28 | Force-Light-Mode-Liste (`FORCE_LIGHT_ROUTES`) statt globalem Theme-Override | Self-contained im Header, kein Provider-Boilerplate; nur eine Stelle bei neuen dunklen Heroes erweitern |
+| 2026-04-28 | Probe-Anfrage und Header-Kontakt jetzt auf `/kontakt` (statt Anker zur Startseite) | Brief-Wunsch — eigene Kontaktseite ist die kanonische Anlaufstelle; Anker bleibt auf Startseite verfügbar |
+| 2026-04-28 | Datenschutz: globaler Replace „Kasel & Vogt GbR" → „Sava Select" inkl. Grammatikglättung | Brief verlangt Marken-Auftritt unter Sava Select; Genitiv/Dativ-Kollisionen (`bei von` etc.) wurden manuell korrigiert |
+| 2026-04-28 | Zertifikate als Lightbox statt seitenbreiter Hochformate | Lab-PDFs sind hoch und detailreich — Card-Preview + Großansicht skaliert besser auf Mobile und wirkt nicht aufdringlich |
 
 ---
 
@@ -272,4 +282,18 @@ npm run build     # Production-Build
 ## 15. Changelog
 
 - **2026-04-20** — Projekt gebootstrappt, Design-System, alle 8 Routen-Stubs, Vercel-Deploy live auf `nvt-three.vercel.app`
-- **2026-04-27** — Komplette Unterseiten-Suite ausgebaut: ProductPage-Komponente, 5 Content-Files unter `src/content/`, Bourbon/Pompona neu gerendert, Geschichte als Long-Read ohne Zeitstrahl, Impressum mit echten Pflichtangaben (Kasel & Vogt GbR), Datenschutz-Volltext mit Sticky-TOC, AnimatePresence-Page-Transitions, GitHub-Push auf `Hagen92343/nvt`
+- **2026-04-27** — Komplette Unterseiten-Suite ausgebaut: ProductPage-Komponente, 5 Content-Files unter `src/content/`, Bourbon/Pompona neu gerendert, Geschichte als Long-Read ohne Zeitstrahl, Impressum mit Pflichtangaben, Datenschutz-Volltext mit Sticky-TOC, AnimatePresence-Page-Transitions, GitHub-Push auf `Hagen92343/nvt`
+- **2026-04-28** — Update-Suite:
+  - Nav: Kontakt-Menüpunkt + Probe-Button → `/kontakt`
+  - Hero: zweiter CTA „Sorten entdecken" entfernt
+  - Stats: Feuchtigkeit `36 – 38 %`
+  - Quality: 40-Jahre-Eyebrow + 40+-Schwebebox raus
+  - DirectImport: Sambava (statt Antalaha/Andapa), Köln (statt München), Industrie ergänzt
+  - Footer: Spacer raus, „seit über 40 Jahren" entfernt, Firmenname `Sava Select`
+  - Bourbon-Hero: „Die Perle Madagaskars"
+  - Pompona-Hero: „Die seltene Perle Pompona"; orange Subhead in Sektion 01 entfernt; Vanillingehalt-Label; Feuchtigkeit `36 %`
+  - Pompona: Header-Light-Mode-Override (Force-Light-Liste), scrollt sanft in Standardmodus
+  - Zertifikate: komplett neu — Lab-Cards (Bourbon/Pompona) mit Framer-Motion-Lightbox (Esc, Klick-außerhalb, Hover-Scale 1.02)
+  - Impressum: „Vertreten durch: Niklas Vogt" statt „Kasel & Vogt GbR"
+  - Datenschutz: globaler Replace + Grammatikglättung; Subtitle leicht überarbeitet
+  - `site.ts`: Firmenname auf `Sava Select`
