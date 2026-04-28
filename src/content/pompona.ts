@@ -6,7 +6,7 @@ export const pompona: ProductData = {
   hero: {
     eyebrow: "Vanilla pompona · unter 1 % der Weltproduktion",
     title: "Pompona Vanille",
-    titleAccent: "Die Seltene Perle",
+    titleAccent: "Die seltene Perle Pompona",
     subtitle:
       "Über 22 cm, fleischig, kräftig. Eine südamerikanische Rarität, in Sambava veredelt – für Kreationen mit Charakter.",
     image: "/images/pompona-product.png",
@@ -14,7 +14,6 @@ export const pompona: ProductData = {
   },
   vanille: {
     headline: "Unsere Vanille",
-    subhead: "Die Königin der Vanillesorten",
     paragraphs: [
       "Die Königin der Vanillesorten, Pompona, auch „Mexikanische Vanille“ genannt, wird in Sambava nach traditionellen Methoden angebaut. Mit einer außergewöhnlichen Größe von über 22 cm und ihren kräftigen, warmen Aromen (Karamell, Gewürze) ist sie aus der Küche großer Konditoren nicht mehr wegzudenken.",
       "Die Pompona bietet ein komplexeres und originelleres Aromaprofil, das für einzigartige Kreationen geschätzt wird.",
@@ -74,13 +73,13 @@ export const pompona: ProductData = {
       },
       {
         title: "Hoher Vanillinanteil",
-        detail: "Bis zu",
+        detail: "Vanillingehalt",
         highlight: "1,8 %",
       },
       {
         title: "Feuchtigkeitsgehalt",
         detail: "Optimaler Reifegrad",
-        highlight: "30 – 35 %",
+        highlight: "36 %",
       },
     ],
   },

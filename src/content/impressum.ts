@@ -11,7 +11,7 @@ export const impressum = {
   provider: {
     heading: "Anbieter",
     brand: "Sava Select",
-    company: "Kasel & Vogt GbR",
+    representedBy: "Vertreten durch: Niklas Vogt",
     street: "Richard-Byrd-Straße 33",
     city: "50829 Köln",
     phone: "01733661177",
@@ -36,7 +36,7 @@ export const impressum = {
     {
       heading: "Datenschutzerklärung",
       body:
-        "Bei allen Vorgängen der Datenverarbeitung (z. B. Erhebung, Verarbeitung und Übermittlung) verfährt die Kasel & Vogt GbR nach den gesetzlichen Vorschriften. Die nachfolgende Datenschutzerklärung soll Ihnen einen Überblick geben, wie Ihre personenbezogenen Daten behandelt werden, wenn Sie unser Angebot und unsere Webseite nutzen. Ihre bei uns erhobenen Daten werden nicht ohne gesetzliche Grundlage oder Ihre Einwilligung weitergegeben oder für andere als die genannten Zwecke verwendet.",
+        "Bei allen Vorgängen der Datenverarbeitung (z. B. Erhebung, Verarbeitung und Übermittlung) verfährt Sava Select nach den gesetzlichen Vorschriften. Die nachfolgende Datenschutzerklärung soll Ihnen einen Überblick geben, wie Ihre personenbezogenen Daten behandelt werden, wenn Sie unser Angebot und unsere Webseite nutzen. Ihre bei uns erhobenen Daten werden nicht ohne gesetzliche Grundlage oder Ihre Einwilligung weitergegeben oder für andere als die genannten Zwecke verwendet.",
     },
   ] satisfies ImprintBlock[],
 } as const;

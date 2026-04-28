@@ -16,10 +16,7 @@ export function Quality() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
         <div className="lg:col-span-5 order-2 lg:order-1">
           <Reveal>
-            <p className="eyebrow">40 Jahre · Handwerkliches Know-how</p>
-          </Reveal>
-          <Reveal delay={0.08}>
-            <h2 className="mt-5 font-display font-semibold text-display-lg text-balance max-w-[12ch]">
+            <h2 className="font-display font-semibold text-display-lg text-balance max-w-[12ch]">
               Höchste Qualität.<br />
               <span className="text-amber-500">Ohne Kompromiss.</span>
             </h2>
@@ -58,14 +55,6 @@ export function Quality() {
               className="object-cover"
             />
           </motion.div>
-          <Reveal delay={0.3}>
-            <div className="absolute -left-4 lg:-left-10 bottom-8 lg:-bottom-6 bg-paper dark:bg-cocoa-900 rounded-2xl px-6 py-5 shadow-2xl shadow-cocoa-700/10 border border-cocoa-700/5 dark:border-cream-200/5 max-w-[18rem]">
-              <div className="font-display font-semibold text-3xl">40+</div>
-              <div className="mt-1 text-sm text-cocoa-800/70 dark:text-cream-100/70">
-                Jahre Erfahrung im direkten Import aus der Sava-Region.
-              </div>
-            </div>
-          </Reveal>
         </div>
       </div>
     </section>

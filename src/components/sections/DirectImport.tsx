@@ -45,10 +45,10 @@ export function DirectImport() {
         <Reveal delay={0.2}>
           <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-px bg-cocoa-700 border border-cocoa-700 rounded-2xl overflow-hidden">
             {[
-              ["01", "Anbau", "Sambava, Antalaha, Andapa"],
+              ["01", "Anbau", "Sambava"],
               ["02", "Fermentation", "Traditionell, 3-stufig"],
-              ["03", "Qualitätskontrolle", "Vor Ort + in München"],
-              ["04", "Lieferung", "Direkt an Gastronomie & Handel"],
+              ["03", "Qualitätskontrolle", "Vor Ort + in Köln"],
+              ["04", "Lieferung", "Direkt an Gastronomie, Handel und Industrie"],
             ].map(([num, title, sub]) => (
               <div key={num} className="bg-cocoa-800 p-8 md:p-10">
                 <div className="font-mono text-amber-400 text-sm">{num}</div>

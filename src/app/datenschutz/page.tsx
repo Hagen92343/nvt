@@ -6,7 +6,7 @@ import { datenschutz } from "@/content/datenschutz";
 export const metadata: Metadata = {
   title: "Datenschutzerklärung",
   description:
-    "Datenschutzerklärung der Kasel & Vogt GbR (Sava Select). Informationen zu Verarbeitung, Rechten der betroffenen Person und Rechtsgrundlagen nach DSGVO.",
+    "Datenschutzerklärung von Sava Select. Informationen zu Verarbeitung, Rechten der betroffenen Person und Rechtsgrundlagen nach DSGVO.",
 };
 
 export default function PrivacyPage() {

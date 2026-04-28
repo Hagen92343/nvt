@@ -6,7 +6,7 @@ import { impressum } from "@/content/impressum";
 
 export const metadata: Metadata = {
   title: "Impressum",
-  description: "Impressum und rechtliche Hinweise gemäß §5 TMG der Sava Select / Kasel & Vogt GbR.",
+  description: "Impressum und rechtliche Hinweise gemäß §5 TMG von Sava Select.",
 };
 
 export default function ImprintPage() {
@@ -28,8 +28,8 @@ export default function ImprintPage() {
                 <br />
                 {provider.city}
               </address>
-              <p className="mt-5 text-base md:text-lg leading-relaxed text-cocoa-800 dark:text-cream-100">
-                {provider.company}
+              <p className="mt-5 text-base md:text-lg leading-relaxed font-medium text-cocoa-800 dark:text-cream-100">
+                {provider.representedBy}
               </p>
               <dl className="mt-6 grid grid-cols-[5rem_1fr] gap-y-2 gap-x-6 text-base md:text-lg text-cocoa-800 dark:text-cream-100">
                 <dt className="eyebrow pt-1.5">Tel</dt>

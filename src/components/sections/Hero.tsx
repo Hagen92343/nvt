@@ -69,9 +69,6 @@ export function Hero() {
               Jetzt kostenlose Probe erhalten
             </Link>
           </MagneticButton>
-          <Link href="/bourbon" className="btn-apple text-cream-50 border border-cream-50/30 hover:border-cream-50 hover:bg-cream-50/10">
-            Sorten entdecken
-          </Link>
         </motion.div>
       </motion.div>
 

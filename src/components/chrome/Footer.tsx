@@ -3,7 +3,7 @@ import { footerLinks, footerNav, site } from "@/lib/site";
 
 export function Footer() {
   return (
-    <footer className="relative mt-section border-t border-cocoa-700/10 dark:border-cream-200/10 bg-cream-100/60 dark:bg-cocoa-900/60">
+    <footer className="relative border-t border-cocoa-700/10 dark:border-cream-200/10 bg-cream-100/60 dark:bg-cocoa-900/60">
       <div className="container-page py-20 md:py-28 grid gap-14 md:grid-cols-12">
         <div className="md:col-span-6">
           <div className="font-display text-3xl md:text-5xl font-semibold tracking-tight text-cocoa-800 dark:text-cream-50 max-w-xl">
@@ -12,7 +12,7 @@ export function Footer() {
             <span className="text-amber-500">Direkt aus Sambava.</span>
           </div>
           <p className="mt-6 max-w-prose text-cocoa-700/80 dark:text-cream-200/80 leading-relaxed">
-            Wir importieren Vanille seit über 40 Jahren – handverlesen, fermentiert nach traditionellem Verfahren, transportiert ohne Zwischenhändler.
+            Wir importieren Vanille – handverlesen, fermentiert nach traditionellem Verfahren, transportiert ohne Zwischenhändler.
           </p>
         </div>
         <div className="md:col-span-3">

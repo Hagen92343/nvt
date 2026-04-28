@@ -8,7 +8,7 @@ export const site = {
     phone: "01733661177",
     phoneIntl: "+49 173 366 1177",
     address: {
-      company: "Kasel & Vogt GbR",
+      company: "Sava Select",
       brand: "Sava Select",
       street: "Richard-Byrd-Straße 33",
       city: "50829 Köln",
@@ -25,7 +25,7 @@ export const nav = [
   { href: "/pompona", label: "Pompona" },
   { href: "/unsere-geschichte", label: "Unsere Geschichte" },
   { href: "/zertifikate", label: "Zertifikate" },
-  { href: CONTACT_ANCHOR, label: "Kontakt" },
+  { href: "/kontakt", label: "Kontakt" },
 ] as const;
 
 export const footerNav = [
@@ -33,7 +33,7 @@ export const footerNav = [
   { href: "/bourbon", label: "Bourbon" },
   { href: "/pompona", label: "Pompona" },
   { href: "/unsere-geschichte", label: "Unsere Geschichte" },
-  { href: CONTACT_ANCHOR, label: "Kontakt" },
+  { href: "/kontakt", label: "Kontakt" },
   { href: "/zertifikate", label: "Zertifikate" },
 ] as const;
 

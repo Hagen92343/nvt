@@ -6,7 +6,7 @@ export const bourbon: ProductData = {
   hero: {
     eyebrow: "Vanilla planifolia",
     title: "Bourbon Vanille",
-    titleAccent: "Die Königin Madagaskars",
+    titleAccent: "Die Perle Madagaskars",
     subtitle:
       "Cremig, vollmundig, warm-süß. Aus der historischen Wiege der Bourbon-Vanille – Sambava, Madagaskar.",
     image: "/images/hero-vanilla.jpg",

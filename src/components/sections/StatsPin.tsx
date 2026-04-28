@@ -30,7 +30,7 @@ const stats: Stat[] = [
     value: 38,
     decimals: 0,
     suffix: " %",
-    prefix: "30 – ",
+    prefix: "36 – ",
     headline: "Geschmeidig statt spröde.",
     body:
       "Die Feuchtigkeit definiert, ob eine Schote biegsam bleibt, ob sie sich auskratzen lässt – und wie intensiv sie ihr Aroma freigibt. Wir halten den Restwassergehalt in einem präzise definierten Korridor.",
