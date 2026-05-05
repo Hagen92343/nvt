@@ -1,7 +1,7 @@
 # NVT — Sava Select Apple-Level Redesign
 
 > Zentrale Projekt-Doku. Pfad: `/Users/hagenmarggraf/Desktop/projects/nvt`
-> Angelegt: 2026-04-20 · Live seit 2026-04-20 · Letztes Update: 2026-04-28
+> Angelegt: 2026-04-20 · Live seit 2026-04-20 · Letztes Update: 2026-05-05
 
 ---
 
@@ -267,15 +267,22 @@ npm run build     # Production-Build
 | 2026-04-28 | Probe-Anfrage und Header-Kontakt jetzt auf `/kontakt` (statt Anker zur Startseite) | Brief-Wunsch — eigene Kontaktseite ist die kanonische Anlaufstelle; Anker bleibt auf Startseite verfügbar |
 | 2026-04-28 | Datenschutz: globaler Replace „Kasel & Vogt GbR" → „Sava Select" inkl. Grammatikglättung | Brief verlangt Marken-Auftritt unter Sava Select; Genitiv/Dativ-Kollisionen (`bei von` etc.) wurden manuell korrigiert |
 | 2026-04-28 | Zertifikate als Lightbox statt seitenbreiter Hochformate | Lab-PDFs sind hoch und detailreich — Card-Preview + Großansicht skaliert besser auf Mobile und wirkt nicht aufdringlich |
+| 2026-05-05 | Logo aus PDF extrahiert, zwei Varianten (`logo` + `logo-light`) | Original-Briefing zeigt nur das Bild — bessere Authentizität als selbst-gebaute SVG; helle Variante für Dark-Mode-Header (Cream + Amber + Palm-Grün) |
+| 2026-05-05 | Dark-Mode hart gelockt statt Toggle | Brief-Wunsch („ohne die option auf hell zu wechseln"); reduziert Komplexität, Logo nur in einer Variante zu pflegen |
+| 2026-05-05 | Eigene Route `/unsere-produkte` statt Erweiterung der Startseite | 5 Produkte (Schoten, Pulver, Kaviar, Extrakt) brauchen Platz mit Aromaprofil + Galerie; Startseite bleibt fokussiert |
+| 2026-05-05 | `useStepOpacity`-Offsets clampen statt fade reduzieren | WAAPI rejected negative Offsets → ganze App crashte; Clamp erhält ursprünglichen Übergangs-Look ohne den Range zu verkleinern |
+| 2026-05-05 | playwright als devDep für Headless-Verification | Reproduzierbarer Smoke-Test über alle 6 Hauptrouten — ohne kann ich client-side-Crashes nicht selbst sehen |
 
 ---
 
 ## 14. Bekannte To-dos
 
 - [x] ~~GitHub-Repo erstellen und pushen~~ → 2026-04-27 erledigt
-- [ ] Favicon ersetzen (aktuell Next.js-Default)
+- [x] ~~Favicon ersetzen (aktuell Next.js-Default)~~ → 2026-05-05 erledigt (SAVA-Logo als `icon.png` + `apple-icon.png`)
+- [ ] Optional: Echte Produkt-Fotografie für Vanillepulver, Vanille-Kaviar und Vanille-Extrakt — aktuell Vanille-Schoten-Bilder als Platzhalter
 - [ ] Optional: Supabase als Form-Backend anbinden (Form sendet aktuell nur ein Mock-Promise)
 - [ ] Optional: OG-Images pro Route generieren (aktuell nur Default-Title-Template)
+- [ ] Optional: Logo-Light-Variante feintunen (Schrift-Kontrast könnte je nach Hintergrund noch eine Spur höher)
 
 ---
 
@@ -311,4 +318,6 @@ npm run build     # Production-Build
   - **Startseite-Grid:** `PomponaTeaser` ersetzt durch `ProductsGrid` — 4 Karten (Bourbon, Pompona, Vanillepulver, Vanille-Kaviar) mit je 1 Bild + Name, einzelner Button „Alle Produkte entdecken" → `/unsere-produkte`
   - **`/unsere-geschichte` gestrichen:** Route + Content-File gelöscht, aus Nav und Footer-Nav entfernt
   - **Stats-Scrolling:** `useStepOpacity` überarbeitet — Übergänge überlappen (fade ±22 % statt mid-Cluster), keine leeren Zwischenphasen mehr
+  - **Hotfix WAAPI-Crash:** Erste Live-Version warf `Failed to execute 'animate' on 'Element': Offsets must be monotonically non-decreasing` und zeigte überall „Application error" — Ursache: `start - fade = -0.073` bei Index 0 (negative Offsets verbietet die Web-Animations-API). Fix: Offsets per `Math.max(0, …) / Math.min(1, …)` plus ε-Inkrement clampen. Verifiziert via Playwright-Headless-Test (alle 6 Hauptrouten, 0 Errors live + lokal)
   - Routes nach Update: `/`, `/bourbon`, `/pompona`, `/unsere-produkte`, `/zertifikate`, `/kontakt`, `/impressum`, `/datenschutz` (8 sichtbar in Nav, 11 prerendered total)
+  - **Live:** https://nvt-three.vercel.app — neuer Production-Build aktiv, Commits `1db8805` + `a3f2868` auf `main`
