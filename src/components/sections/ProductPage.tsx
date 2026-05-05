@@ -4,7 +4,19 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { Check, ChevronDown } from "lucide-react";
+import {
+  Check,
+  ChevronDown,
+  Flame,
+  TreePine,
+  Flower2,
+  Sparkles,
+  IceCream,
+  Cookie,
+  Candy,
+  Leaf,
+  type LucideIcon,
+} from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 import { CONTACT_ANCHOR } from "@/lib/site";
@@ -253,18 +265,34 @@ function SectionAroma({ data }: Props) {
           ))}
 
           <div className="mt-10 flex flex-wrap gap-3">
-            {data.aroma.notes.map((note, i) => (
-              <Reveal key={note} delay={0.2 + i * 0.06}>
-                <span className="inline-flex items-center rounded-full border border-cocoa-700/15 dark:border-cream-200/15 bg-paper dark:bg-cocoa-950/50 px-5 py-2.5 text-sm font-medium text-cocoa-800 dark:text-cream-100 shadow-sm">
-                  {note}
-                </span>
-              </Reveal>
-            ))}
+            {data.aroma.notes.map((note, i) => {
+              const Icon = iconForNote(note);
+              return (
+                <Reveal key={note} delay={0.2 + i * 0.06}>
+                  <span className="inline-flex items-center gap-2 rounded-full border border-cocoa-700/15 dark:border-cream-200/15 bg-paper dark:bg-cocoa-950/50 px-5 py-2.5 text-sm font-medium text-cocoa-800 dark:text-cream-100 shadow-sm">
+                    <Icon size={16} className="text-amber-500 shrink-0" strokeWidth={2} />
+                    {note}
+                  </span>
+                </Reveal>
+              );
+            })}
           </div>
         </div>
       </div>
     </section>
   );
+}
+
+function iconForNote(note: string): LucideIcon {
+  const n = note.toLowerCase();
+  if (/(rauchig|holzig|tabak|wald)/.test(n)) return TreePine;
+  if (/(blumig|blüte|floral)/.test(n)) return Flower2;
+  if (/(intensiv|kräftig|warm)/.test(n)) return Flame;
+  if (/(lakritz|gewürz|würzig)/.test(n)) return Sparkles;
+  if (/(creme|süß|sahne|vanille)/.test(n)) return IceCream;
+  if (/(schokolade|kakao|mocca)/.test(n)) return Cookie;
+  if (/(karamell|honig|sirup)/.test(n)) return Candy;
+  return Leaf;
 }
 
 /* ─────────────  Sektion 4 · Gastronomie  ───────────── */

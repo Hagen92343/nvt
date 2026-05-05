@@ -36,7 +36,7 @@ export function DirectImport() {
           <div className="lg:col-span-5">
             <Reveal delay={0.12}>
               <p className="text-lg md:text-xl leading-relaxed text-cream-100/90 max-w-prose">
-                Wir kaufen dort, wo die Vanille wächst – bei Familien, mit denen wir seit Jahrzehnten zusammenarbeiten. Kein Broker, keine anonyme Beschaffung. Wir kennen jedes Feld.
+                Wir kaufen dort, wo die Vanille wächst. Kein Broker, keine anonyme Beschaffung. Wir kennen jedes Feld.
               </p>
             </Reveal>
           </div>

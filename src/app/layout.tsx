@@ -42,12 +42,12 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="de" suppressHydrationWarning>
+    <html lang="de" className="dark" style={{ colorScheme: "dark" }} suppressHydrationWarning>
       <head>
         <script src="/theme-init.js" async={false} />
       </head>
       <body
-        className={`${sans.variable} ${display.variable} ${serif.variable} antialiased bg-paper text-ink dark:bg-cocoa-950 dark:text-cream-100`}
+        className={`${sans.variable} ${display.variable} ${serif.variable} antialiased bg-cocoa-950 text-cream-100`}
       >
         <LoadingScreen />
         <CustomCursor />

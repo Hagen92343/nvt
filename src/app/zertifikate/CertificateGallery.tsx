@@ -18,17 +18,17 @@ type Certificate = {
 const certificates: Certificate[] = [
   {
     src: "/zertifikate/zertifikat-1.png",
-    alt: "Laborzertifikat Bourbon-Vanille – Februar 2026",
+    alt: "Bulletin d'Analyse N° 01.097.C/26 – Bourbon-Vanille",
     variety: "Bourbon-Vanille",
-    date: "Februar 2026",
+    date: "Bulletin N° 01.097.C/26 · Februar 2026",
     vanillin: "Vanillin 2,3 %",
     moisture: "Feuchtigkeit 38 %",
   },
   {
     src: "/zertifikate/zertifikat-2.png",
-    alt: "Laborzertifikat Pompona-Vanille – März 2026",
+    alt: "Bulletin d'Analyse N° 03.402.C/26 – Pompona-Vanille",
     variety: "Pompona-Vanille",
-    date: "März 2026",
+    date: "Bulletin N° 03.402.C/26 · März 2026",
     vanillin: "Vanillin 1,8 %",
     moisture: "Feuchtigkeit 36 %",
   },
@@ -60,7 +60,7 @@ export function CertificateGallery() {
           </Reveal>
           <Reveal delay={0.08}>
             <p className="mt-6 text-lg md:text-xl leading-relaxed text-cocoa-800/85 dark:text-cream-100/85">
-              Jede Charge wird im akkreditierten Labor in Antananarivo geprüft. Vanillingehalt, Feuchtigkeit und mikrobiologische Qualität werden bei jedem Import dokumentiert – transparent, nachvollziehbar, ohne Umwege.
+              Jede Charge wird im akkreditierten Labor des Ministère du Commerce geprüft. Vanillingehalt, Feuchtigkeit und mikrobiologische Qualität werden bei jedem Import dokumentiert – transparent, nachvollziehbar, ohne Umwege.
             </p>
           </Reveal>
         </div>

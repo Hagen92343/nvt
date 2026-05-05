@@ -15,7 +15,7 @@ export const pompona: ProductData = {
   vanille: {
     headline: "Unsere Vanille",
     paragraphs: [
-      "Die Königin der Vanillesorten, Pompona, auch „Mexikanische Vanille“ genannt, wird in Sambava nach traditionellen Methoden angebaut. Mit einer außergewöhnlichen Größe von über 22 cm und ihren kräftigen, warmen Aromen (Karamell, Gewürze) ist sie aus der Küche großer Konditoren nicht mehr wegzudenken.",
+      "Die Königin der Vanillesorten, Pompona, auch „Mexikanische Vanille“ genannt, wird in Sambava nach traditionellen Methoden angebaut. Mit einer außergewöhnlichen Größe von über 22 cm und ihren kräftigen, warmen Aromen ist sie aus der Küche großer Konditoren nicht mehr wegzudenken.",
       "Die Pompona bietet ein komplexeres und originelleres Aromaprofil, das für einzigartige Kreationen geschätzt wird.",
     ],
     image: "/images/pompona-product.png",
@@ -36,10 +36,10 @@ export const pompona: ProductData = {
       "Pompona-Schoten entwickeln ein komplexes, mehrdimensionales Aromabild – wärmer und tiefer als klassische Bourbon.",
     ],
     notes: [
-      "Kräftige Aromen",
-      "Rauchige, holzige Noten",
-      "Würzig",
-      "Manchmal blumig oder nach Lakritz",
+      "Intensive Aromen",
+      "Rauchige und holzige Noten",
+      "Würzig und blumig",
+      "Manchmal mit Lakritzgeschmack",
     ],
   },
   gastronomy: {
@@ -72,7 +72,7 @@ export const pompona: ProductData = {
         detail: "Von der Vanillepflanze bis in Ihre Küche, ohne Zwischenhändler.",
       },
       {
-        title: "Hoher Vanillinanteil",
+        title: "Höchster Vanillinanteil",
         detail: "Vanillingehalt",
         highlight: "1,8 %",
       },

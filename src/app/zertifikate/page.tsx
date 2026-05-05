@@ -19,7 +19,7 @@ export default function CertificatesPage() {
             <span className="italic font-serif font-light text-amber-500">Nachweise.</span>
           </>
         }
-        subtitle="Wir lassen jede Charge im akkreditierten Labor in Antananarivo prüfen. Die aktuellen Ergebnisse findest du hier."
+        subtitle="Wir lassen jede Charge in einem akkreditierten Labor in Madagaskar prüfen. Die aktuellen Ergebnisse findest du hier."
       />
       <CertificateGallery />
     </>

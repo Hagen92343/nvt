@@ -83,7 +83,7 @@ export function ContactForm() {
               Überzeug dich. <span className="italic font-serif font-light text-amber-500">Gratis.</span>
             </h2>
             <p className="mt-6 max-w-prose text-lg leading-relaxed text-cocoa-800/80 dark:text-cream-100/80">
-              Wir schicken dir eine Auswahl unserer Schoten – damit du Aroma, Feuchtigkeit und Qualität in deiner Küche testen kannst, bevor du bestellst.
+              Wir schicken dir eine Auswahl unserer Vanille – damit du Aroma, Feuchtigkeit und Qualität in deiner Küche testen kannst, bevor du bestellst.
             </p>
           </div>
 
@@ -163,7 +163,7 @@ export function ContactForm() {
                         {["name", "business", "address", "zip", "purpose"].includes(current.key as string) && (
                           <input
                             {...register(current.key as keyof FormValues)}
-                            autoFocus
+                            autoFocus={step > 0}
                             type={current.key === "zip" ? "text" : "text"}
                             inputMode={current.key === "zip" ? "numeric" : "text"}
                             placeholder={

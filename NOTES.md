@@ -297,3 +297,18 @@ npm run build     # Production-Build
   - Impressum: „Vertreten durch: Niklas Vogt" statt „Kasel & Vogt GbR"
   - Datenschutz: globaler Replace + Grammatikglättung; Subtitle leicht überarbeitet
   - `site.ts`: Firmenname auf `Sava Select`
+- **2026-05-05** — Briefing-Pass „SAVA Select Website.pdf" (10 Seiten):
+  - **Logo & Favicon:** Echtes SAVA-Select-Logo aus PDF extrahiert (`public/images/sava-select-logo.png` + `-light.png`); Favicon `src/app/icon.png` 512px + `apple-icon.png` 180px; Header-Wortmarke „SAVA Select" durch Bild-Logo ersetzt; Klick auf Logo scrollt smooth zum Anfang der Startseite
+  - **Dark-Mode-Lock:** Theme-Toggle (Desktop + Mobile) entfernt, `theme-init.js` setzt immer `dark`, `<html>` mit `colorScheme: dark` und `class="dark"`, `FORCE_LIGHT_ROUTES` weg
+  - **Startseite Texte:** Stat 1 Body „Vanillin … Hauptaromastoff", Stat 2 Body „bleibt und ob sie sich auskratzen lässt – also wie intensiv", Quality „Wir pflegen eine partnerschaftliche Arbeit mit", DirectImport-Klammer („bei Familien…") raus, Hero-Subtitle „Schoten" → „Qualität", ContactForm „unserer Schoten" → „unserer Vanille"
+  - **Pompona-Unterseite:** Vanille-Paragraph: Klammer „(Karamell, Gewürze)" raus; Aromaprofil-Bullets neu: „Intensive Aromen / Rauchige und holzige Noten / Würzig und blumig / Manchmal mit Lakritzgeschmack"
+  - **Bourbon-Unterseite:** Herkunft-Satz aufgeteilt — „… Bourbon-Vanille. Sie ist das Ergebnis eines …"
+  - **Aromaprofil-Icons:** SectionAroma rendert Notes mit lucide-Icons (Flame, TreePine, Flower2, Sparkles, IceCream, Cookie, Candy, Leaf) per Stichwort-Mapping
+  - **„Höchster Vanillinanteil":** Bourbon und Pompona Promise-Item umbenannt
+  - **Zertifikate neu:** Zwei echte Bulletins d'Analyse N° 01.097.C/26 (Bourbon) und 03.402.C/26 (Pompona) als 1062×1500-Bilder; CertificateGallery-Daten/Subtitles neu; „Antananarivo" überall raus, durch „Madagaskar" ersetzt
+  - **Kontakt-Anchor-Fix:** `autoFocus` in ContactForm-Inputs konditional (nur ab Step 1) — verhindert dass `/kontakt` direkt zum Formular springt statt zum PageHero
+  - **Neue Unterseite `/unsere-produkte`:** 5 Produkte (Bourbon-Schoten, Pompona-Schoten, Vanillepulver, Vanille-Kaviar, Vanille-Extrakt 40 %) mit alternierenden BG, Klick-Galerie links + Aromaprofil/Einsatz/Eckdaten rechts, Beschreibung darunter; `src/content/produkte.ts` als typisierter Content-Layer; `ProductsCatalog.tsx` Client-Komponente; keine Preise
+  - **Startseite-Grid:** `PomponaTeaser` ersetzt durch `ProductsGrid` — 4 Karten (Bourbon, Pompona, Vanillepulver, Vanille-Kaviar) mit je 1 Bild + Name, einzelner Button „Alle Produkte entdecken" → `/unsere-produkte`
+  - **`/unsere-geschichte` gestrichen:** Route + Content-File gelöscht, aus Nav und Footer-Nav entfernt
+  - **Stats-Scrolling:** `useStepOpacity` überarbeitet — Übergänge überlappen (fade ±22 % statt mid-Cluster), keine leeren Zwischenphasen mehr
+  - Routes nach Update: `/`, `/bourbon`, `/pompona`, `/unsere-produkte`, `/zertifikate`, `/kontakt`, `/impressum`, `/datenschutz` (8 sichtbar in Nav, 11 prerendered total)

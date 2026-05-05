@@ -23,7 +23,7 @@ export const CONTACT_ANCHOR = "/#kontaktformular" as const;
 export const nav = [
   { href: "/bourbon", label: "Bourbon" },
   { href: "/pompona", label: "Pompona" },
-  { href: "/unsere-geschichte", label: "Unsere Geschichte" },
+  { href: "/unsere-produkte", label: "Unsere Produkte" },
   { href: "/zertifikate", label: "Zertifikate" },
   { href: "/kontakt", label: "Kontakt" },
 ] as const;
@@ -32,7 +32,7 @@ export const footerNav = [
   { href: "/", label: "Startseite" },
   { href: "/bourbon", label: "Bourbon" },
   { href: "/pompona", label: "Pompona" },
-  { href: "/unsere-geschichte", label: "Unsere Geschichte" },
+  { href: "/unsere-produkte", label: "Unsere Produkte" },
   { href: "/kontakt", label: "Kontakt" },
   { href: "/zertifikate", label: "Zertifikate" },
 ] as const;

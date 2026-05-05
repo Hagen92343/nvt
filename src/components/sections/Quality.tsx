@@ -23,7 +23,7 @@ export function Quality() {
           </Reveal>
           <Reveal delay={0.16}>
             <p className="mt-8 max-w-prose text-lg leading-relaxed text-cocoa-800/80 dark:text-cream-100/80">
-              Vier Jahrzehnte partnerschaftliche Arbeit mit madagassischen Produzent&#39;innen. Jede Ernte wird kuratiert, jede Schote manuell sortiert. Wir wählen aus, was wir selbst verwenden würden – und reichen nichts weiter, was dem nicht entspricht.
+              Wir pflegen eine partnerschaftliche Arbeit mit madagassischen Produzent&#39;innen. Jede Ernte wird kuratiert, jede Charge manuell sortiert. Wir wählen aus, was wir selbst verwenden würden – und reichen nichts weiter, was dem nicht entspricht.
             </p>
           </Reveal>
           <Reveal delay={0.24}>

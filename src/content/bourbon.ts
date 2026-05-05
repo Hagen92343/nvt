@@ -23,7 +23,7 @@ export const bourbon: ProductData = {
   herkunft: {
     headline: "Herkunft",
     paragraphs: [
-      "Diese Vanilla planifolia stammt direkt aus dem Hochland von Sambava (Madagaskar), der historischen Wiege der Bourbon-Vanille, und ist das Ergebnis eines seit 40 Jahren weitergegebenen handwerklichen Know-hows.",
+      "Diese Vanilla planifolia stammt direkt aus dem Hochland von Sambava (Madagaskar), der historischen Wiege der Bourbon-Vanille. Sie ist das Ergebnis eines seit 40 Jahren weitergegebenen handwerklichen Know-hows.",
       "Jede Schote ist das Ergebnis eines zu 100 % natürlichen Prozesses.",
     ],
     image: "/images/bourbon-1.png",
@@ -72,7 +72,7 @@ export const bourbon: ProductData = {
         detail: "Von der Vanillepflanze bis in Ihre Küche, ohne Zwischenhändler.",
       },
       {
-        title: "Hoher Vanillinanteil",
+        title: "Höchster Vanillinanteil",
         detail: "Vanillingehalt",
         highlight: "2,3 %",
       },

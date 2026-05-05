@@ -23,7 +23,7 @@ const stats: Stat[] = [
     prefix: "1,8 – ",
     headline: "Aromatische Tiefe, messbar.",
     body:
-      "Unsere Schoten liegen konsequent am oberen Ende des internationalen Standards. Dieses Aromaspektrum entsteht nur durch saubere Fermentation und geduldige Trocknung in Madagaskar.",
+      "Unsere Vanille liegt mit ihrem Vanillin-Gehalt am oberen Ende des internationalen Standards. Vanillin ist der Hauptaromastoff in der Vanilleschote und sorgt für den Geruch sowie Geschmack.",
   },
   {
     label: "Feuchtigkeit",
@@ -33,7 +33,7 @@ const stats: Stat[] = [
     prefix: "36 – ",
     headline: "Geschmeidig statt spröde.",
     body:
-      "Die Feuchtigkeit definiert, ob eine Schote biegsam bleibt, ob sie sich auskratzen lässt – und wie intensiv sie ihr Aroma freigibt. Wir halten den Restwassergehalt in einem präzise definierten Korridor.",
+      "Die Feuchtigkeit definiert, ob eine Schote biegsam bleibt und ob sie sich auskratzen lässt – also wie intensiv sie ihr Aroma freigibt. Wir halten den Restwassergehalt in einem präzise definierten Korridor.",
   },
   {
     label: "Schotenlänge",
@@ -104,12 +104,13 @@ export function StatsPin() {
 }
 
 function useStepOpacity(progress: MotionValue<number>, index: number, total: number) {
-  const start = index / total;
-  const end = (index + 1) / total;
-  const mid = (start + end) / 2;
+  const segment = 1 / total;
+  const start = index * segment;
+  const end = (index + 1) * segment;
+  const fade = segment * 0.22;
   return useTransform(
     progress,
-    [start, Math.max(start + 0.05, mid - 0.05), Math.min(end - 0.05, mid + 0.05), end],
+    [start - fade, start + fade, end - fade, end + fade],
     [0, 1, 1, 0]
   );
 }

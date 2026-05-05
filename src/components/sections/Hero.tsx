@@ -55,7 +55,7 @@ export function Hero() {
           transition={{ duration: 1, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
           className="mt-8 max-w-xl text-lg md:text-xl leading-relaxed text-cream-100/90"
         >
-          Spitzenvanille direkt aus der Sava-Region. Kein Zwischenhandel, keine Kompromisse – nur Schoten, die jede Prüfung bestehen.
+          Spitzenvanille direkt aus der Sava-Region. Kein Zwischenhandel, keine Kompromisse – nur Qualität, die jede Prüfung besteht.
         </motion.p>
 
         <motion.div

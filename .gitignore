@@ -35,3 +35,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 public/zertifikate/sava-select-update-prompt.md
+
+# Lokale PDF-Extraktion (Briefing-Anhang, nicht ins Repo)
+/.pdf-extract/
+/SAVA Select Website .pdf
