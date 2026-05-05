@@ -108,11 +108,13 @@ function useStepOpacity(progress: MotionValue<number>, index: number, total: num
   const start = index * segment;
   const end = (index + 1) * segment;
   const fade = segment * 0.22;
-  return useTransform(
-    progress,
-    [start - fade, start + fade, end - fade, end + fade],
-    [0, 1, 1, 0]
-  );
+  // Clamp auf [0, 1] — sonst crasht das Web Animations API (Offsets müssen ≥ 0 sein).
+  // Erste Stat startet sofort sichtbar, letzte bleibt bis zum Ende sichtbar.
+  const a = Math.max(0, start - fade);
+  const b = Math.min(1, Math.max(a + 0.0001, start + fade));
+  const c = Math.max(b + 0.0001, Math.min(1, end - fade));
+  const d = Math.min(1, Math.max(c + 0.0001, end + fade));
+  return useTransform(progress, [a, b, c, d], [0, 1, 1, 0]);
 }
 
 function StatNumber({ stat, index, total, progress }: { stat: Stat; index: number; total: number; progress: MotionValue<number> }) {
